@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Practice Activity: Basic Syntax</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="PA_errors_python_files/libs/clipboard/clipboard.min.js"></script>
+<script src="PA_errors_python_files/libs/quarto-html/quarto.js"></script>
+<script src="PA_errors_python_files/libs/quarto-html/popper.min.js"></script>
+<script src="PA_errors_python_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="PA_errors_python_files/libs/quarto-html/anchor.min.js"></script>
+<link href="PA_errors_python_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="PA_errors_python_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="PA_errors_python_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="PA_errors_python_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="PA_errors_python_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Practice Activity: Basic Syntax</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this PA, you will will be creating and manipulating basic objects to uncover a top secret message.</p>
+<section id="hint-1" class="level3">
+<h3 class="anchored" data-anchor-id="hint-1">Hint 1</h3>
+<p>As you work through this PA, you will encounter some code that does not work as you want it to. Don’t despair! Errors (when R is unable to run your code) and bugs (when the code doesn’t do what you hoped) are a natural part of coding. Even the best of the best deal with these problems regularly - learning to track down the issue is a skill that you can learn and practice.</p>
+<p>Google is your friend! If an error is confusing, copy it into Google and see what other people are saying. If you don’t know how to do something, search for it.</p>
+</section>
+<section id="hint-2" class="level3">
+<h3 class="anchored" data-anchor-id="hint-2">Hint 2</h3>
+<p>Just because there is no error message doesn’t mean everything went smoothly. You should be regularly printing out your objects, to see they contain the information and format that you expect.</p>
+<p>For example, if you have an object named <code>my_thing</code>, you might first want to simply look at the object by typing its name.</p>
+<p>However, you might also want to make sure it is the right <strong>object type</strong> and/or the right <strong>object structure</strong>.</p>
+<div class="cell" data-execution_count="293">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#type(my_thing)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#len(my_thing)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="294">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="part-one-setup" class="level2">
+<h2 class="anchored" data-anchor-id="part-one-setup">Part One: Setup</h2>
+<p>Each of the following code chunks will cause an error and/or do the desired task incorrectly. Find the mistake, and correct it to complete the intended action.</p>
+<ol type="1">
+<li>Create lists containing the upper case letters, lower case letters, and some punctuation marks.</li>
+</ol>
+<div class="cell" data-execution_count="323">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lower_case <span class="op">=</span> [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span>, <span class="st">"f"</span>, <span class="st">"g"</span>, <span class="st">"h"</span>, <span class="st">"i"</span>, <span class="st">"j"</span>, <span class="st">"k"</span>, <span class="st">"l"</span>, <span class="st">"m"</span>, <span class="st">"n"</span>, <span class="st">"o"</span>, <span class="st">"p"</span>, <span class="st">"q"</span>, <span class="st">"r"</span>, <span class="st">"s"</span>, <span class="st">"t"</span>, <span class="st">"u"</span>, <span class="st">"v"</span>, <span class="st">"w"</span>, <span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>upper_case <span class="op">=</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"G"</span>, <span class="st">"H"</span> <span class="st">"I"</span>, <span class="st">"J"</span>, <span class="st">"K"</span>, <span class="st">"L"</span>, <span class="st">"M"</span>, <span class="st">"N"</span>, <span class="st">"O"</span>, <span class="st">"P"</span>, <span class="st">"Q"</span>, <span class="st">"R"</span>, <span class="st">"S"</span>, <span class="st">"T"</span>, <span class="st">"U"</span>, <span class="st">"V"</span>, <span class="st">"W"</span>, <span class="st">"X"</span>, <span class="st">"Y"</span>, <span class="st">"Z"</span>]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>punctuation <span class="op">=</span> [<span class="st">"."</span>, <span class="st">","</span>, <span class="st">"!"</span>, <span class="st">"?"</span>, <span class="st">"'"</span>, <span class="st">""</span>, <span class="st">"("</span>, <span class="st">")"</span>, <span class="st">" "</span>, <span class="st">"-"</span>, <span class="st">";"</span>, <span class="st">":"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Make one long list containing all the symbols. Find the length of this list.</li>
+</ol>
+<div class="cell" data-outputid="84f49e3c-0267-4739-854a-2d82ad1ed7a0" data-execution_count="324">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>all_symbols <span class="op">=</span> [lower_case, upper_case, punctuation]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> <span class="bu">len</span>(lower_case)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>u <span class="op">=</span> <span class="bu">len</span>(upper_case)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="bu">len</span>(punctuation)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>l<span class="op">+</span>p<span class="op">+</span>u</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="324">
+<pre><code>63</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Repeat the previous steps, but instead of using <em>list</em> type objects, use <strong>numpy arrays</strong>. Don’t forget to <strong>import</strong> the numpy library!</li>
+</ol>
+<div class="cell" data-outputid="d34c9dcf-2b64-4e6a-e16a-5629dba83b8a" data-execution_count="325">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy <span class="im">import</span> array</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>lower_case <span class="op">=</span> array([<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span>, <span class="st">"f"</span>, <span class="st">"g"</span>, <span class="st">"h"</span>, <span class="st">"i"</span>, <span class="st">"j"</span>, <span class="st">"k"</span>, <span class="st">"l"</span>, <span class="st">"m"</span>, <span class="st">"n"</span>, <span class="st">"o"</span>, <span class="st">"p"</span>, <span class="st">"q"</span>, <span class="st">"r"</span>, <span class="st">"s"</span>, <span class="st">"t"</span>, <span class="st">"u"</span>, <span class="st">"v"</span>, <span class="st">"w"</span>, <span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>])</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>upper_case <span class="op">=</span> array([<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"G"</span>, <span class="st">"H"</span>, <span class="st">"I"</span>, <span class="st">"J"</span>, <span class="st">"K"</span>, <span class="st">"L"</span>, <span class="st">"M"</span>, <span class="st">"N"</span>, <span class="st">"O"</span>, <span class="st">"P"</span>, <span class="st">"Q"</span>, <span class="st">"R"</span>, <span class="st">"S"</span>, <span class="st">"T"</span>, <span class="st">"U"</span>, <span class="st">"V"</span>, <span class="st">"W"</span>, <span class="st">"X"</span>, <span class="st">"Y"</span>, <span class="st">"Z"</span>])</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>punctuation <span class="op">=</span> array([<span class="st">"."</span>, <span class="st">","</span>, <span class="st">"!"</span>, <span class="st">"?"</span>, <span class="st">"'"</span>, <span class="st">"</span><span class="ch">\"</span><span class="st">"</span>, <span class="st">"("</span>, <span class="st">")"</span>, <span class="st">" "</span>, <span class="st">"-"</span>, <span class="st">";"</span>, <span class="st">":"</span>])</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">## Use np.concatenate to combine into long array</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>all_symbols <span class="op">=</span> np.concatenate((lower_case, upper_case, punctuation), axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>all_symbols</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(all_symbols)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="325">
+<pre><code>64</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Make a <strong>pandas data frame</strong>, with one column called “Symbol” containing the <code>all_symbols</code> array.</li>
+</ol>
+<div class="cell" data-outputid="a2e5b2e0-8d5e-4246-fbc0-6d55314bc183" data-execution_count="328">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>symbols_df <span class="op">=</span> pd.DataFrame({<span class="st">"Symbol"</span>:all_symbols})</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>symbols_df</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#symbols_df.rename(columns={"0":"Symbols"})</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#symbols_df.rename({"0":"Symbols"},axis='columns')</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#I tried those two above and they were not working. Then I looked at different ways to label columns under pandas and I found that way.</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#https://pandas.pydata.org/docs/user_guide/10min.html</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="328">
+
+  <div id="df-68a5b1fd-28ea-445b-ac92-cd30a5b75bd5" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>a</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>c</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>d</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>e</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">59</td>
+<td>)</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">60</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">61</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">62</td>
+<td>;</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">63</td>
+<td>:</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>64 rows × 1 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-68a5b1fd-28ea-445b-ac92-cd30a5b75bd5')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-68a5b1fd-28ea-445b-ac92-cd30a5b75bd5 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-68a5b1fd-28ea-445b-ac92-cd30a5b75bd5');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-4826be49-27be-4b4c-b23c-3a65ddad1b5e">
+  <button class="colab-df-quickchart" onclick="quickchart('df-4826be49-27be-4b4c-b23c-3a65ddad1b5e')" title="Suggest charts." style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-4826be49-27be-4b4c-b23c-3a65ddad1b5e button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="part-two-decoding-the-secret-message." class="level2">
+<h2 class="anchored" data-anchor-id="part-two-decoding-the-secret-message.">Part Two: Decoding the secret message.</h2>
+<div class="cell" data-outputid="a3c520b6-861f-462f-c99e-93f7e6c09a1a" data-execution_count="299">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>top_secret <span class="op">=</span> pd.read_csv(<span class="st">"https://www.dropbox.com/s/k72h1zewk4gtqep/PA_Secret_Code?dl=1"</span>, header<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#top_secret = top_secret['0'].to_numpy()</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> (np.exp(((top_secret <span class="op">+</span><span class="dv">14</span>)<span class="op">*</span><span class="dv">18</span>)<span class="op">-</span><span class="dv">257</span>))</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>ts</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ts<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>t<span class="op">&lt;</span><span class="dv">17</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">sum</span>(np.array(t)<span class="op">&lt;</span><span class="dv">17</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="299">
+<pre><code>352</code></pre>
+</div>
+</div>
+</section>
+<section id="bodwins-help" class="level1">
+<h1>Bodwin’s Help</h1>
+<div class="cell" data-execution_count="300">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#top_secret = top.reshape(5, -1).T</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#evens = np.arange(2, 384, 2)</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#top_secret[:,0] = top_secret[:,0] - evens</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#top_secret[17:24, 2] = top_secret[17:24, 2] - 100</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#top_secret[:,3:5] = top_secret[:,3:5]*2</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#top_secret = top_secret.T.flatten()</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#sum(top_secret[500:955] &gt;= 100)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="301">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#top_secret</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="my-attempt" class="level1">
+<h1>My attempt</h1>
+<div class="cell" data-execution_count="302">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>top <span class="op">=</span> np.array(t)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>tops <span class="op">=</span> np.array(top).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span> , order <span class="op">=</span> <span class="st">'F'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="74973e80-1663-4703-f7dd-ae69c38581b7" data-execution_count="303">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>even_numbers <span class="op">=</span> [num <span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">383</span>) <span class="cf">if</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>evens <span class="op">=</span> (np.arange(<span class="dv">2</span>,<span class="dv">383</span>,<span class="dv">2</span>))</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>evens</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="303">
+<pre><code>array([  2,   4,   6,   8,  10,  12,  14,  16,  18,  20,  22,  24,  26,
+        28,  30,  32,  34,  36,  38,  40,  42,  44,  46,  48,  50,  52,
+        54,  56,  58,  60,  62,  64,  66,  68,  70,  72,  74,  76,  78,
+        80,  82,  84,  86,  88,  90,  92,  94,  96,  98, 100, 102, 104,
+       106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130,
+       132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156,
+       158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182,
+       184, 186, 188, 190, 192, 194, 196, 198, 200, 202, 204, 206, 208,
+       210, 212, 214, 216, 218, 220, 222, 224, 226, 228, 230, 232, 234,
+       236, 238, 240, 242, 244, 246, 248, 250, 252, 254, 256, 258, 260,
+       262, 264, 266, 268, 270, 272, 274, 276, 278, 280, 282, 284, 286,
+       288, 290, 292, 294, 296, 298, 300, 302, 304, 306, 308, 310, 312,
+       314, 316, 318, 320, 322, 324, 326, 328, 330, 332, 334, 336, 338,
+       340, 342, 344, 346, 348, 350, 352, 354, 356, 358, 360, 362, 364,
+       366, 368, 370, 372, 374, 376, 378, 380, 382])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="304">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>tops[:,<span class="dv">0</span>] <span class="op">-=</span> evens</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>tops</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="306">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a> tops[<span class="dv">17</span>:<span class="dv">24</span>,<span class="dv">2</span>] <span class="op">-=</span><span class="dv">100</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#tops</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="6676c3eb-9387-4ecd-89dd-34a80fec4a85" data-execution_count="307">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>tops</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="307">
+<pre><code>array([[5.700e+01, 1.440e+02, 3.610e+02, 9.000e+00, 2.050e+01],
+       [4.600e+01, 1.000e+00, 1.521e+03, 7.500e+00, 3.050e+01],
+       [2.300e+01, 5.290e+02, 2.250e+02, 1.050e+01, 3.000e+00],
+       [1.000e+00, 3.610e+02, 2.250e+02, 3.500e+00, 9.000e+00],
+       [1.900e+01, 3.721e+03, 1.600e+01, 4.000e+00, 5.000e-01],
+       [6.100e+01, 1.521e+03, 3.721e+03, 3.050e+01, 1.000e+00],
+       [2.000e+00, 6.400e+01, 1.000e+00, 5.000e-01, 5.000e+00],
+       [1.800e+01, 1.000e+00, 5.290e+02, 7.000e+00, 7.500e+00],
+       [9.000e+00, 1.521e+03, 6.400e+01, 2.000e+00, 1.050e+01],
+       [1.200e+01, 3.721e+03, 8.100e+01, 3.050e+01, 9.500e+00],
+       [1.200e+01, 9.000e+00, 1.440e+02, 1.950e+01, 3.050e+01],
+       [9.000e+00, 1.000e+00, 2.500e+01, 4.000e+00, 2.000e+00],
+       [7.000e+00, 1.521e+03, 3.721e+03, 9.000e+00, 5.000e-01],
+       [5.400e+01, 9.000e+00, 8.100e+01, 7.500e+00, 1.250e+01],
+       [6.100e+01, 6.400e+01, 1.960e+02, 1.050e+01, 2.750e+01],
+       [1.000e+00, 3.025e+03, 3.721e+03, 3.500e+00, 3.050e+01],
+       [1.400e+01, 3.721e+03, 1.521e+03, 4.000e+00, 1.450e+01],
+       [4.000e+00, 7.840e+02, 6.400e+01, 3.050e+01, 5.000e-01],
+       [6.100e+01, 2.500e+01, 2.250e+02, 3.050e+01, 6.000e+00],
+       [3.900e+01, 5.290e+02, 4.410e+02, 3.050e+01, 6.000e+00],
+       [8.000e+00, 1.000e+00, 4.900e+01, 2.300e+01, 7.500e+00],
+       [5.000e+00, 3.240e+02, 6.400e+01, 4.000e+00, 7.500e+00],
+       [6.100e+01, 2.500e+01, 1.521e+03, 2.500e+00, 4.000e+00],
+       [1.900e+01, 3.721e+03, 2.809e+03, 3.050e+01, 2.750e+01],
+       [1.200e+01, 1.521e+03, 3.721e+03, 1.100e+01, 3.050e+01],
+       [9.000e+00, 6.400e+01, 7.290e+02, 7.500e+00, 1.450e+01],
+       [3.900e+01, 2.500e+01, 1.960e+02, 9.000e+00, 5.000e-01],
+       [8.000e+00, 3.721e+03, 1.600e+01, 8.000e+00, 6.000e+00],
+       [2.500e+01, 1.296e+03, 2.916e+03, 5.000e-01, 6.000e+00],
+       [6.100e+01, 4.410e+02, 3.721e+03, 6.000e+00, 5.000e-01],
+       [3.900e+01, 4.000e+00, 1.000e+00, 3.050e+01, 1.250e+01],
+       [1.500e+01, 1.000e+02, 3.610e+02, 1.000e+00, 2.750e+01],
+       [2.200e+01, 4.410e+02, 3.721e+03, 6.000e+00, 2.900e+01],
+       [5.000e+00, 4.000e+00, 8.100e+01, 5.000e-01, 3.050e+01],
+       [1.900e+01, 3.721e+03, 1.960e+02, 2.000e+00, 3.050e+01],
+       [6.100e+01, 4.000e+00, 3.721e+03, 2.500e+00, 3.050e+01],
+       [6.100e+01, 8.100e+01, 4.410e+02, 3.050e+01, 1.700e+01],
+       [3.721e+03, 3.240e+02, 3.600e+01, 1.150e+01, 2.500e+00],
+       [9.000e+02, 1.600e+01, 3.600e+01, 2.500e+00, 3.050e+01],
+       [8.100e+01, 2.916e+03, 8.100e+01, 7.000e+00, 1.500e+00],
+       [1.600e+01, 3.721e+03, 3.610e+02, 1.950e+01, 4.000e+00],
+       [3.721e+03, 1.000e+00, 6.400e+01, 3.050e+01, 7.500e+00],
+       [4.900e+01, 1.960e+02, 3.721e+03, 9.500e+00, 9.000e+00],
+       [6.250e+02, 1.600e+01, 1.521e+03, 7.000e+00, 1.950e+01],
+       [3.240e+02, 3.721e+03, 6.400e+01, 4.500e+00, 6.000e+00],
+       [2.500e+01, 3.610e+02, 2.250e+02, 1.500e+00, 2.500e+00],
+       [3.721e+03, 6.400e+01, 4.410e+02, 5.500e+00, 2.000e+00],
+       [1.000e+00, 4.410e+02, 4.900e+01, 2.500e+00, 3.050e+01],
+       [1.960e+02, 1.960e+02, 6.400e+01, 9.000e+00, 4.500e+00],
+       [1.600e+01, 3.721e+03, 1.521e+03, 3.100e+01, 7.000e+00],
+       [3.721e+03, 3.721e+03, 3.721e+03, 9.500e+00, 3.050e+01],
+       [4.900e+01, 3.721e+03, 6.400e+01, 7.000e+00, 4.000e+00],
+       [8.100e+01, 2.116e+03, 2.500e+01, 5.000e-01, 4.500e+00],
+       [1.690e+02, 6.400e+01, 3.721e+03, 1.500e+00, 9.500e+00],
+       [4.000e+00, 2.500e+01, 3.610e+02, 5.500e+00, 3.050e+01],
+       [1.440e+02, 3.721e+03, 1.521e+03, 2.750e+01, 5.000e+00],
+       [2.500e+01, 3.600e+01, 2.250e+02, 3.050e+01, 7.500e+00],
+       [3.721e+03, 3.240e+02, 2.250e+02, 1.700e+01, 1.250e+01],
+       [8.100e+01, 4.410e+02, 1.600e+01, 2.500e+00, 2.650e+01],
+       [1.960e+02, 1.690e+02, 2.916e+03, 3.050e+01, 3.050e+01],
+       [3.721e+03, 8.100e+01, 3.721e+03, 6.000e+00, 2.850e+01],
+       [1.521e+03, 2.250e+02, 3.721e+03, 2.500e+00, 2.300e+01],
+       [6.400e+01, 4.410e+02, 3.721e+03, 3.000e+00, 1.150e+01],
+       [2.500e+01, 3.610e+02, 2.116e+03, 1.950e+01, 5.000e-01],
+       [3.721e+03, 3.721e+03, 6.400e+01, 3.050e+01, 9.500e+00],
+       [5.290e+02, 7.840e+02, 2.500e+01, 4.500e+00, 3.050e+01],
+       [1.000e+00, 1.000e+00, 3.721e+03, 1.950e+01, 1.000e+00],
+       [4.000e+00, 1.960e+02, 1.296e+03, 3.050e+01, 9.000e+00],
+       [2.500e+01, 1.600e+01, 1.000e+00, 2.000e+00, 4.500e+00],
+       [4.096e+03, 2.500e+01, 4.000e+00, 2.500e+00, 6.000e+00],
+       [3.721e+03, 3.240e+02, 4.000e+00, 5.000e-01, 6.000e+00],
+       [7.290e+02, 3.610e+02, 2.500e+01, 2.000e+00, 4.500e+00],
+       [1.440e+02, 1.960e+02, 3.240e+02, 2.700e+01, 3.500e+00],
+       [1.440e+02, 1.000e+00, 5.290e+02, 3.050e+01, 2.700e+01],
+       [3.721e+03, 1.521e+03, 2.250e+02, 5.000e-01, 3.050e+01],
+       [1.690e+02, 9.000e+00, 9.000e+00, 7.000e+00, 5.000e-01],
+       [8.100e+01, 6.400e+01, 1.210e+02, 2.000e+00, 7.000e+00],
+       [1.690e+02, 3.025e+03, 2.916e+03, 3.050e+01, 2.000e+00],
+       [3.610e+02, 3.364e+03, 3.721e+03, 1.150e+01, 3.050e+01],
+       [6.250e+02, 3.721e+03, 5.290e+02, 4.500e+00, 1.950e+01],
+       [3.721e+03, 1.156e+03, 8.100e+01, 1.950e+01, 4.000e+00],
+       [5.290e+02, 2.500e+01, 1.521e+03, 4.000e+00, 2.500e+00],
+       [2.500e+01, 3.721e+03, 6.400e+01, 3.050e+01, 3.050e+01],
+       [3.240e+02, 1.521e+03, 6.100e+01, 4.500e+00, 9.500e+00],
+       [2.500e+01, 2.250e+02, 5.000e+00, 1.950e+01, 6.000e+00],
+       [3.721e+03, 2.250e+02, 2.500e+01, 9.500e+00, 4.500e+00],
+       [1.521e+03, 1.210e+02, 5.000e+00, 3.050e+01, 1.950e+01],
+       [6.400e+01, 3.721e+03, 1.900e+01, 4.000e+00, 4.000e+00],
+       [2.500e+01, 6.400e+01, 6.100e+01, 2.500e+00, 1.250e+01],
+       [3.721e+03, 8.100e+01, 1.500e+01, 5.000e-01, 3.050e+01],
+       [4.000e+00, 3.610e+02, 6.000e+00, 2.000e+00, 1.950e+01],
+       [2.250e+02, 3.721e+03, 6.100e+01, 3.050e+01, 7.500e+00],
+       [3.240e+02, 4.840e+02, 6.000e+00, 3.050e+01, 1.100e+01],
+       [2.250e+02, 2.250e+02, 1.200e+01, 3.050e+01, 2.500e+00],
+       [4.900e+01, 3.240e+02, 1.000e+00, 1.700e+01, 9.500e+00],
+       [2.250e+02, 2.560e+02, 1.300e+01, 2.500e+00, 3.050e+01],
+       [4.840e+02, 1.000e+00, 5.000e+00, 3.050e+01, 3.050e+01],
+       [2.500e+01, 1.440e+02, 5.400e+01, 1.150e+01, 3.050e+01],
+       [3.610e+02, 3.721e+03, 6.100e+01, 2.500e+00, 1.500e+01],
+       [2.916e+03, 3.610e+02, 2.900e+01, 7.000e+00, 4.500e+00],
+       [3.721e+03, 5.290e+02, 1.000e+00, 1.950e+01, 2.000e+00],
+       [3.721e+03, 2.250e+02, 1.300e+01, 3.050e+01, 3.050e+01],
+       [3.721e+03, 3.240e+02, 5.000e+00, 3.500e+00, 3.500e+00],
+       [7.290e+02, 1.600e+01, 6.100e+01, 5.000e-01, 1.250e+01],
+       [1.960e+02, 3.721e+03, 2.300e+01, 6.000e+00, 9.000e+00],
+       [1.600e+01, 8.100e+01, 8.000e+00, 1.050e+01, 2.500e+00],
+       [3.721e+03, 1.960e+02, 9.000e+00, 6.500e+00, 3.050e+01],
+       [1.521e+03, 3.721e+03, 6.000e+00, 8.000e+00, 5.000e-01],
+       [6.400e+01, 6.400e+01, 6.000e+00, 4.000e+00, 7.000e+00],
+       [2.500e+01, 1.000e+00, 1.200e+01, 4.500e+00, 2.000e+00],
+       [3.721e+03, 1.960e+02, 9.000e+00, 7.000e+00, 3.050e+01],
+       [1.690e+02, 1.600e+01, 1.400e+01, 3.500e+00, 3.500e+00],
+       [2.250e+02, 3.969e+03, 7.000e+00, 3.050e+01, 4.500e+00],
+       [1.690e+02, 3.721e+03, 6.100e+01, 1.000e+00, 6.500e+00],
+       [2.500e+01, 3.721e+03, 3.900e+01, 5.000e-01, 1.000e+00],
+       [3.721e+03, 3.721e+03, 8.000e+00, 1.500e+00, 6.000e+00],
+       [3.240e+02, 1.444e+03, 1.800e+01, 5.500e+00, 2.500e+00],
+       [1.000e+00, 2.250e+02, 1.500e+01, 2.650e+01, 3.050e+01],
+       [1.521e+03, 1.960e+02, 2.100e+01, 3.050e+01, 4.500e+00],
+       [6.400e+01, 4.900e+01, 7.000e+00, 2.900e+01, 7.000e+00],
+       [3.610e+02, 3.721e+03, 8.000e+00, 1.350e+01, 3.050e+01],
+       [3.721e+03, 1.521e+03, 6.100e+01, 7.000e+00, 1.950e+01],
+       [2.250e+02, 8.100e+01, 3.900e+01, 2.000e+00, 4.000e+00],
+       [4.410e+02, 1.690e+02, 8.000e+00, 3.050e+01, 2.500e+00],
+       [1.521e+03, 2.500e+01, 5.000e+00, 4.000e+00, 3.050e+01],
+       [4.900e+01, 3.721e+03, 6.100e+01, 5.000e-01, 1.150e+01],
+       [3.240e+02, 1.521e+03, 3.900e+01, 9.500e+00, 5.000e-01],
+       [1.000e+00, 6.400e+01, 2.100e+01, 1.950e+01, 1.000e+00],
+       [4.000e+00, 2.500e+01, 1.200e+01, 3.050e+01, 2.500e+00],
+       [2.500e+01, 3.721e+03, 7.000e+00, 1.950e+01, 3.200e+01],
+       [2.809e+03, 1.690e+02, 5.000e+00, 4.000e+00, 3.050e+01],
+       [3.721e+03, 1.000e+00, 2.500e+01, 7.500e+00, 1.350e+01],
+       [3.364e+03, 1.960e+02, 6.100e+01, 1.050e+01, 6.000e+00],
+       [7.840e+02, 5.760e+02, 2.300e+01, 3.050e+01, 6.000e+00],
+       [2.500e+01, 2.250e+02, 1.500e+01, 9.500e+00, 3.050e+01],
+       [5.290e+02, 1.690e+02, 1.500e+01, 6.000e+00, 6.500e+00],
+       [1.000e+00, 2.500e+01, 4.000e+00, 5.000e-01, 4.500e+00],
+       [3.240e+02, 3.721e+03, 5.400e+01, 4.500e+00, 6.500e+00],
+       [2.500e+01, 3.600e+01, 6.100e+01, 7.000e+00, 9.500e+00],
+       [3.721e+03, 2.250e+02, 6.100e+01, 3.050e+01, 1.250e+01],
+       [1.521e+03, 2.500e+01, 6.100e+01, 1.950e+01, 3.050e+01],
+       [6.400e+01, 3.721e+03, 2.700e+01, 4.000e+00, 1.150e+01],
+       [2.500e+01, 6.400e+01, 1.400e+01, 2.500e+00, 2.500e+00],
+       [3.721e+03, 2.500e+01, 4.000e+00, 3.050e+01, 9.000e+00],
+       [1.296e+03, 3.721e+03, 6.100e+01, 1.800e+01, 2.500e+00],
+       [1.000e+00, 3.610e+02, 2.000e+00, 5.000e-01, 3.050e+01],
+       [4.000e+00, 2.250e+02, 2.100e+01, 1.000e+00, 1.950e+01],
+       [4.000e+00, 4.410e+02, 1.800e+01, 1.000e+00, 4.000e+00],
+       [2.500e+01, 4.900e+01, 2.000e+00, 2.500e+00, 2.500e+00],
+       [3.240e+02, 6.400e+01, 1.200e+01, 9.000e+00, 3.050e+01],
+       [5.290e+02, 1.521e+03, 5.000e+00, 1.150e+01, 1.000e+00],
+       [2.250e+02, 3.844e+03, 4.000e+00, 7.500e+00, 7.500e+00],
+       [9.000e+00, 3.721e+03, 6.100e+01, 1.500e+00, 9.000e+00],
+       [1.210e+02, 2.025e+03, 1.000e+00, 5.500e+00, 7.500e+00],
+       [2.916e+03, 2.250e+02, 1.900e+01, 2.800e+01, 3.500e+00],
+       [3.721e+03, 3.721e+03, 6.100e+01, 3.050e+01, 7.500e+00],
+       [1.690e+02, 3.240e+02, 9.000e+00, 3.050e+01, 1.100e+01],
+       [6.250e+02, 2.500e+01, 3.900e+01, 3.050e+01, 2.500e+00],
+       [3.721e+03, 3.610e+02, 6.100e+01, 1.450e+01, 9.500e+00],
+       [3.610e+02, 1.521e+03, 3.000e+00, 7.500e+00, 2.700e+01],
+       [2.250e+02, 2.500e+01, 1.000e+00, 6.500e+00, 3.050e+01],
+       [1.960e+02, 1.600e+01, 1.300e+01, 2.500e+00, 3.050e+01],
+       [3.025e+03, 3.721e+03, 5.000e+00, 3.050e+01, 3.050e+01],
+       [3.721e+03, 6.400e+01, 5.500e+01, 1.950e+01, 1.350e+01],
+       [3.721e+03, 2.500e+01, 6.100e+01, 7.500e+00, 7.000e+00],
+       [3.721e+03, 3.721e+03, 4.100e+01, 3.050e+01, 2.000e+00],
+       [2.116e+03, 4.000e+00, 1.400e+01, 6.500e+00, 3.050e+01],
+       [6.400e+01, 6.250e+02, 5.000e+00, 1.250e+01, 1.950e+01],
+       [2.500e+01, 3.721e+03, 5.400e+01, 3.050e+01, 4.000e+00],
+       [3.721e+03, 1.521e+03, 6.100e+01, 5.000e-01, 2.500e+00],
+       [1.000e+02, 6.400e+01, 3.900e+01, 9.000e+00, 3.050e+01],
+       [1.000e+00, 2.500e+01, 2.300e+01, 6.500e+00, 6.500e+00],
+       [5.290e+02, 3.721e+03, 1.500e+01, 9.500e+00, 7.500e+00],
+       [3.610e+02, 2.116e+03, 5.500e+01, 2.700e+01, 6.500e+00],
+       [3.721e+03, 4.410e+02, 6.100e+01, 3.050e+01, 2.500e+00],
+       [1.521e+03, 1.690e+02, 4.100e+01, 6.500e+00, 3.050e+01],
+       [6.400e+01, 1.521e+03, 1.400e+01, 1.250e+01, 9.000e+00],
+       [1.000e+00, 4.410e+02, 5.000e+00, 3.050e+01, 5.000e-01],
+       [1.521e+03, 1.690e+02, 5.400e+01, 1.000e+00, 1.950e+01],
+       [3.721e+03, 3.721e+03, 6.100e+01, 2.500e+00, 4.000e+00],
+       [4.000e+00, 1.521e+03, 3.900e+01, 5.000e-01, 9.500e+00],
+       [8.100e+01, 3.240e+02, 2.300e+01, 6.500e+00, 3.050e+01],
+       [1.521e+03, 2.500e+01, 1.500e+01, 4.500e+00, 7.500e+00],
+       [2.500e+01, 2.500e+01, 5.500e+01, 9.500e+00, 1.050e+01],
+       [2.916e+03, 3.721e+03, 6.100e+01, 4.000e+00, 1.950e+01],
+       [3.721e+03, 3.721e+03, 2.700e+01, 3.050e+01, 3.500e+00],
+       [1.521e+03, 3.721e+03, 1.400e+01, 1.000e+00, 9.000e+00],
+       [6.400e+01, 7.290e+02, 4.000e+00, 7.500e+00, 5.000e-01],
+       [2.500e+01, 1.960e+02, 6.100e+01, 1.250e+01, 1.000e+00],
+       [3.721e+03, 1.600e+01, 3.900e+01, 2.750e+01, 2.500e+00],
+       [9.000e+00, 3.721e+03, 8.000e+00, 3.050e+01, 2.650e+01]])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="308">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#type(tops)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="310">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>tops[:,<span class="dv">4</span>] <span class="op">*=</span><span class="dv">2</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#tops</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="311">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>tops[:,<span class="dv">3</span>] <span class="op">*=</span><span class="dv">2</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#tops</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="312">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>tops <span class="op">=</span> tops.flatten(order <span class="op">=</span> <span class="st">'F'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>tops</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="9736e31d-a2b3-40f1-a341-19a68b5ea6f7" data-execution_count="313">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>top_secret <span class="op">=</span> <span class="bu">all</span>(num <span class="op">&lt;</span> <span class="dv">100</span> <span class="cf">for</span> num <span class="kw">in</span> tops[<span class="dv">500</span>:])</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>top_secret</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="313">
+<pre><code>True</code></pre>
+</div>
+</div>
+</section>
+<section id="section" class="level1">
+<h1>11, 12, 13</h1>
+<div class="cell" data-execution_count="314">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>tops[<span class="dv">37</span>:<span class="dv">465</span>] <span class="op">=</span> np.sqrt(tops[<span class="dv">37</span>:<span class="dv">465</span>])</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="315">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tops <span class="op">=</span> np.<span class="bu">round</span>(tops)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="316">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>top_secret <span class="op">=</span> np.where(tops <span class="op">==</span><span class="fl">39.</span>, <span class="fl">20.</span>, tops)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>top_secret</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="ae8ff122-a9eb-48f4-d898-e8dd6a4e671d" data-execution_count="318">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>even_count <span class="op">=</span> np.<span class="bu">sum</span>(top_secret <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>even_count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="318">
+<pre><code>344</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="321">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>top_secret <span class="op">=</span> top_secret <span class="op">-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="hint" class="level3">
+<h3 class="anchored" data-anchor-id="hint">Hint</h3>
+<p>Recall that basic math operations are <strong>vectorized</strong>. This means you don’t have to repeat the process for each item in a list; you can apply the math to the whole thing at once.</p>
+</section>
+<section id="instructions" class="level3">
+<h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
+<p>By altering this top secret set of numbers, you will be able to create a message. Write your own code to complete the steps below.</p>
+<ol type="1">
+<li>Add 14 to every number.</li>
+<li>Multiply every number by 18, then subtract 257.</li>
+<li>Exponentiate every number. (That is, do e<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. You may have to Google how to do this!)</li>
+<li>Square every number.</li>
+</ol>
+<p><strong>Checkpoint:</strong> Headquarters has informed you that at this stage of decoding, there should be 352 numbers in the secret message that are below 17. Write code to check if this is true for your data.</p>
+<ol start="5" type="1">
+<li>Turn your one-dimensional array of numbers into a two-dimensional array (matrix) with 5 columns.</li>
+<li>Separately from your top secret numbers, create an array of all the even numbers between 1 and 382. Name it “evens”. That is, “evens” should contain 2, 4, 6, 8 …, 382.</li>
+<li>Subtract the “evens” vector from the first column of your secret message matrix.</li>
+<li>Subtract 100 from all numbers in the 18-24th rows of the 3rd column.</li>
+<li>Multiply all numbers in the 4th and 5th column by 2.</li>
+<li>Turn your matrix back into a one dimensional array.</li>
+</ol>
+<p><strong>Checkpoint:</strong> Headquarters has informed you that at this stage of decoding, all numbers in indices 500 and beyond are below 100. Write code to check if your numbers fulfill this requirement.</p>
+<ol start="11" type="1">
+<li>Take the square root of all numbers in indices 38 to 465.</li>
+<li>Round all numbers to the nearest whole number.</li>
+<li>Replace all instances of the number 39 with 20.</li>
+</ol>
+<p><strong>Checkpoint:</strong> Headquarters has informed you that your final message should have 344 even numbers. Write code to check if your numbers fulfill this requirement.</p>
+</section>
+<section id="part-3-the-secret-message" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-the-secret-message">Part 3: The secret message!</h2>
+<p>Run the following to discover the final message! Google the first line of this message, if you do not recognize it, to see what it is.</p>
+<div class="cell" data-outputid="a872facc-bfb7-43f7-e0e5-f1ce0c9c8730" data-execution_count="329">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">''</span>.join(<span class="bu">map</span>(<span class="bu">str</span>, symbols_df.loc[top_secret][<span class="st">'Symbol'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="329">
+<pre><code>'\'Twas brillig, and the slithy toves   Did gyre and gimble in the wabe: All mimsy were the borogoves,   And the mome raths outgrabe. "Beware the Jabberwock, my son!   The jaws that bite, the claws that catch! Beware the Jubjub bird, and shun   The frumious Bandersnatch!" He took his vorpal sword in hand;   Long time the manxome foe he sought- So rested he by the Tumtum tree   And stood awhile in thought. And, as in uffish thought he stood,   The Jabberwock, with eyes of flame, Came whiffling through the tulgey wood,   And burbled as it came! One, two! One, two! And through and through   The vorpal blade went snicker-snack! He left it dead, and with its head   He went galumphing back. "And hast thou slain the Jabberwock?   Come to my arms, my beamish boy! O frabjous day! Callooh! Callay!"   He chortled in his joy. \'Twas brillig, and the slithy toves   Did gyre and gimble in the wabe: All mimsy were the borogoves,   And the mome raths outgrabe.'</code></pre>
+</div>
+</div>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>number<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
